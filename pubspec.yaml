@@ -37,6 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   get: ^4.6.6
   intl: any
+  google_fonts: ^6.2.1
+  flutter_image_slideshow: ^0.1.6
+  transparent_image: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +63,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   generate: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/images/home_carousel/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -1,0 +1,74 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+Widget siteAppBar(String routeName) {
+  final isHover = false.obs;
+  return Container(
+    width: double.infinity,
+    height: kToolbarHeight,
+    padding: const EdgeInsets.symmetric(horizontal: 16),
+    child: Row(
+      children: [
+        Obx(
+          () => TextButton(
+            onPressed: () => Get.offNamed('/'),
+            onHover: (hover) => isHover.value = hover,
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.lightBlue[isHover.value ? 300 : 100],
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              minimumSize: Size(kToolbarHeight * 3 / 4, kToolbarHeight * 3 / 4),
+              padding: EdgeInsets.all(0),
+            ),
+            child: Image.asset(
+              'assets/images/pacrii.png',
+              height: kToolbarHeight * 3 / 4,
+            ),
+          ),
+        ),
+        const Spacer(),
+        appBarActionButton('about', 'about', routeName),
+        appBarActionButton('projects', 'projects', routeName),
+        appBarActionButton('skills', 'skills', routeName),
+        appBarActionButton('contacts', 'contacts', routeName),
+      ],
+    ),
+  );
+}
+
+Widget appBarActionButton(String label, String endpoint, String currentRoute) {
+  final isHover = false.obs;
+
+  return Obx(
+    () => TextButton(
+      onPressed: () => Get.toNamed('/$endpoint'),
+      child: isHover.value || endpoint == currentRoute
+          ? RichText(
+              text: TextSpan(
+                text: '[',
+                style: GoogleFonts.poppins(
+                    color: endpoint == currentRoute
+                        ? Colors.amber[700]
+                        : Colors.lightBlueAccent[100]),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: label,
+                      style: GoogleFonts.poppins(color: Colors.white)),
+                  TextSpan(
+                    text: ']',
+                    style: GoogleFonts.poppins(
+                        color: endpoint == currentRoute
+                            ? Colors.amber[700]
+                            : Colors.lightBlueAccent[100]),
+                  ),
+                ],
+              ),
+            )
+          : Text(
+              label,
+              style: GoogleFonts.poppins(color: Colors.white),
+            ),
+      onHover: (hover) => isHover.value = hover,
+    ),
+  );
+}
