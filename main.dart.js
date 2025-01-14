@@ -18342,7 +18342,7 @@ m.aA()
 m.JC(l,l,r)
 s.ay$!==$&&A.af()
 s.ay$=m
-n=m}s.G0(new A.tW(p,new A.qa("/home","Fachri Rachmanda's Portfolio",k,l),o,n,l))
+n=m}s.G0(new A.tW(p,new A.qa("/home","Fachri Rachmanda",k,l),o,n,l))
 s.qb()}},B={}
 var w=[A,J,B]
 var $={}
