@@ -8,9 +8,6 @@ void main() {
   runApp(
     GetMaterialApp(
       title: "Fachri Rachmanda's Portfolio",
-      onGenerateTitle: (BuildContext context) {
-        return "Fachri Rachmanda's Portfolio";
-      },
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),
