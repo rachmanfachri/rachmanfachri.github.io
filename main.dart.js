@@ -22299,7 +22299,7 @@ m.aC()
 m.To(l,l,r)
 s.ay$!==$&&A.a6()
 s.ay$=m
-n=m}s.OI(new A.xd(p,new A.tW("/","Fachri Rachmanda's Portfolio",k,l),o,n,l))
+n=m}s.OI(new A.xd(p,new A.tW("/hello","Fachri Rachmanda's Portfolio",k,l),o,n,l))
 s.vr()}},B={}
 var w=[A,J,B]
 var $={}
@@ -68185,7 +68185,7 @@ $0(){var s=null,r=this.a,q=A.awe(s,s,B.DV.k(0,r.gm(0)?300:100),s,s,s,s,s,s,s,s,n
 return A.aln(A.oQ("assets/images/pacrii.png",s,42,s),new A.aek(r),new A.ael(),q)},
 $S:150}
 A.ael.prototype={
-$0(){return A.atb($.aK(),"/",t.z)},
+$0(){return A.atb($.aK(),"/hello",t.z)},
 $S:0}
 A.aek.prototype={
 $1(a){this.a.sm(0,a)
@@ -68292,7 +68292,7 @@ for(s=this.a.e,r=s.ch,q=0;q<r.length;++q)m.push(new A.pH(1/0,1/0,A.oQ(r[q],B.fH,
 r=A.X(166,0,0,0)
 p=A.bG(0,500)
 s=s.CW
-return A.l7(B.bm,A.b([new A.u9(m,1/0,1/0,5000,!0,0,!0,o),A.iR(B.R,new A.ji(B.zM,new A.rl(A.l8(s.gm(0),new A.dd(s.gm(0),t.kK),A.hE().$2$color$fontSize(B.i,30),B.cy),p,new A.WU(),o),o),B.v,r,o,o,o,1/0,o,o,o,o,1/0),A.ahs("/")],n),B.bU)},
+return A.l7(B.bm,A.b([new A.u9(m,1/0,1/0,5000,!0,0,!0,o),A.iR(B.R,new A.ji(B.zM,new A.rl(A.l8(s.gm(0),new A.dd(s.gm(0),t.kK),A.hE().$2$color$fontSize(B.i,30),B.cy),p,new A.WU(),o),o),B.v,r,o,o,o,1/0,o,o,o,o,1/0),A.ahs("/hello")],n),B.bU)},
 $S:81}
 A.WU.prototype={
 $2(a,b){return new A.f2(b,!1,a,null)},
@@ -74049,7 +74049,7 @@ i=j[2]
 h=[400*d/(d+27.13),400*c/(c+27.13),400*i/(i+27.13)]
 return new A.a72(l,(40*h[0]+20*h[1]+h[2])/20*k,k,k,a1,1,q,m,A.AD(m,0.25),1.48+e)})
 s($,"aBr","aol",()=>{var q=null,p=t.z
-return A.b([A.tY(q,q,new A.DB(),B.db,B.dc,B.N,q,!1,q,!0,q,"/",!0,new A.Rd(),q,q,q,!0,!0,q,B.dJ,q,q,p),A.tY(q,q,new A.B1(),B.db,B.dc,B.N,q,!1,q,!0,q,"/about",!0,new A.Re(),q,q,q,!0,!0,q,B.dJ,q,q,p),A.tY(q,q,new A.FA(),B.db,B.dc,B.N,q,!1,q,!0,q,"/projects",!0,new A.Rf(),q,q,q,!0,!0,q,B.dJ,q,q,p),A.tY(q,q,new A.H8(),B.db,B.dc,B.N,q,!1,q,!0,q,"/skills",!0,new A.Rg(),q,q,q,!0,!0,q,B.dJ,q,q,p),A.tY(q,q,new A.C0(),B.db,B.dc,B.N,q,!1,q,!0,q,"/contacts",!0,new A.Rh(),q,q,q,!0,!0,q,B.dJ,q,q,p)],t.RT)})})();(function nativeSupport(){!function(){var s=function(a){var m={}
+return A.b([A.tY(q,q,new A.DB(),B.db,B.dc,B.N,q,!1,q,!0,q,"/hello",!0,new A.Rd(),q,q,q,!0,!0,q,B.dJ,q,q,p),A.tY(q,q,new A.B1(),B.db,B.dc,B.N,q,!1,q,!0,q,"/about",!0,new A.Re(),q,q,q,!0,!0,q,B.dJ,q,q,p),A.tY(q,q,new A.FA(),B.db,B.dc,B.N,q,!1,q,!0,q,"/projects",!0,new A.Rf(),q,q,q,!0,!0,q,B.dJ,q,q,p),A.tY(q,q,new A.H8(),B.db,B.dc,B.N,q,!1,q,!0,q,"/skills",!0,new A.Rg(),q,q,q,!0,!0,q,B.dJ,q,q,p),A.tY(q,q,new A.C0(),B.db,B.dc,B.N,q,!1,q,!0,q,"/contacts",!0,new A.Rh(),q,q,q,!0,!0,q,B.dJ,q,q,p)],t.RT)})})();(function nativeSupport(){!function(){var s=function(a){var m={}
 m[a]=1
 return Object.keys(hunkHelpers.convertToFastObject(m))[0]}
 v.getIsolateTag=function(a){return s("___dart_"+a+v.isolateTag)}
