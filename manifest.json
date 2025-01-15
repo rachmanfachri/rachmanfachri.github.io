@@ -1,11 +1,11 @@
 {
-    "name": "Fachri Rachmanda's Portfolio",
-    "short_name": "Portofachrio",
+    "name": "portfolio",
+    "short_name": "portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Portfolio of Fachri Rachmanda",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
