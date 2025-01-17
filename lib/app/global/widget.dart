@@ -12,7 +12,7 @@ Widget siteAppBar(String routeName) {
       children: [
         Obx(
           () => TextButton(
-            onPressed: () => Get.offNamed('/'),
+            onPressed: () => Get.offNamed('/hello'),
             onHover: (hover) => isHover.value = hover,
             style: TextButton.styleFrom(
               backgroundColor: Colors.lightBlue[isHover.value ? 300 : 100],

@@ -1,6 +1,6 @@
 # Fachri Rachmanda's Portfolio
 
-A new Flutter project.
+welcome, have a nice stay.
 
 ## Getting Started
 
