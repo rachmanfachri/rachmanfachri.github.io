@@ -107,20 +107,6 @@
     <img class="center" aria-hidden="true" src="assets/images/pacrii.png" alt="">
   </picture>
 
-  <script defer>
-    window.addEventListener('load', function (ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function (engineInitializer) {
-          engineInitializer.initializeEngine().then(function (appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-  </script>
+  <script defer src="flutter_bootstrap.js" async></script>
 </body>
 </html>
