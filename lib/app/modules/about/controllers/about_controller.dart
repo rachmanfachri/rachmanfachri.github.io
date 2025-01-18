@@ -26,7 +26,7 @@ class AboutController extends GetxController {
   }
 
   showContent() async {
-    Future.delayed(Duration(milliseconds: 1000), () {
+    Future.delayed(Duration(milliseconds: 1250), () {
       contentOpacity.value = 1;
     });
   }

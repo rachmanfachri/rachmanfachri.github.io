@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
 
 class SkillsController extends GetxController {
-  //TODO: Implement SkillsController
+  final bgOpacity = 0.0.obs;
+  final contentOpacity = 0.0.obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
+    showBg();
+    showContent();
     super.onInit();
   }
 
@@ -19,5 +21,13 @@ class SkillsController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  showBg() async {
+    Future.delayed(Duration(milliseconds: 500), () => bgOpacity.value = 1);
+  }
+
+  showContent() async {
+    Future.delayed(Duration(milliseconds: 1000), () {
+      contentOpacity.value = 1;
+    });
+  }
 }

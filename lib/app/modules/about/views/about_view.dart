@@ -38,20 +38,21 @@ class AboutView extends GetView<AboutController> {
             width: double.infinity,
             height: double.infinity,
             color: Colors.black.withOpacity(0.65),
-            alignment: Alignment.center,
-            child: AnimatedOpacity(
-              opacity: c.contentOpacity.value,
-              duration: Duration(milliseconds: 500),
-              child: Container(
-                padding: EdgeInsets.all(30),
-                margin: EdgeInsets.all(30),
-                constraints: BoxConstraints(maxWidth: 1920 / 2),
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
+          ),
+          AnimatedOpacity(
+            opacity: c.contentOpacity.value,
+            duration: Duration(milliseconds: 500),
+            child: Container(
+              padding: EdgeInsets.all(30),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.5),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(top: kToolbarHeight),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     CircleAvatar(
                       backgroundColor: Colors.white,
@@ -60,27 +61,37 @@ class AboutView extends GetView<AboutController> {
                           borderRadius: BorderRadius.circular(75),
                           child: Image.asset('assets/images/portrait.png')),
                     ),
-                    SizedBox(height: 20),
-                    Text(
-                      "hi, i'm fachri rachmanda!",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 30),
+                    const SizedBox(width: 50),
+                    ConstrainedBox(
+                      constraints:
+                          BoxConstraints(maxWidth: (1920 / 3) - 60 - 75 - 50),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "hi, i'm fachri rachmanda!",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(
+                                color: Colors.white, fontSize: 30),
+                          ),
+                          SizedBox(height: 20),
+                          Text(
+                            "based in south jakarta. i got my undergraduate degree from"
+                            " universitas brawijaya majoring in informatics"
+                            " engineering, and i specified in mobile app engineering.\n\n"
+                            "i've been working with flutter since 2020 and"
+                            " going strong. experienced working"
+                            " in various project for many kind of industries e.g. insurance,"
+                            " marketplace, job portal, etc.\n\n"
+                            "i keen to visual geometry, colour tones, and usability of user interface. mainly working on mobile app's development for user interface and functionality.",
+                            style: GoogleFonts.poppins(
+                                color: Colors.white, fontSize: 16),
+                          ),
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 20),
-                    Text(
-                      "based in south jakarta. i am undergraduate degree from"
-                      " universitas brawijaya majoring in informatics"
-                      " engineering, i specified in mobile app engineering.\n\n"
-                      "i've been working with flutter since 2020 and"
-                      " going strong. experienced working"
-                      " in various business types of it industries e.g. insurance,"
-                      " superapp, job portal, etc.\n\n"
-                      "i keen to visual geometry, colour tones, and usability of user interface. mainly working on mobile app's development for user interface and functionality.",
-                      style: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 16),
-                    ),
-                  ],
+                  ].reversed.toList(),
                 ),
               ),
             ),
