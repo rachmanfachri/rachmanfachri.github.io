@@ -27,6 +27,7 @@ Widget siteAppBar(String routeName) {
           ),
         ),
         const Spacer(),
+        appBarActionButton('hello', 'hello', routeName),
         appBarActionButton('about', 'about', routeName),
         appBarActionButton('projects', 'projects', routeName),
         appBarActionButton('skills', 'skills', routeName),
@@ -41,22 +42,28 @@ Widget appBarActionButton(String label, String endpoint, String currentRoute) {
 
   return Obx(
     () => TextButton(
-      onPressed: () => Get.toNamed('/$endpoint'),
+      onPressed: () =>
+          Get.offNamedUntil('/$endpoint', ModalRoute.withName('/hello')),
       child: isHover.value || endpoint == currentRoute
           ? RichText(
               text: TextSpan(
-                text: '[',
-                style: GoogleFonts.poppins(
-                    color: endpoint == currentRoute
-                        ? Colors.amber[700]
-                        : Colors.lightBlueAccent[100]),
                 children: <TextSpan>[
+                  TextSpan(
+                      text: '[',
+                      style: GoogleFonts.poppins(
+                          fontWeight:
+                              endpoint == currentRoute ? FontWeight.bold : null,
+                          color: endpoint == currentRoute
+                              ? Colors.amber[700]
+                              : Colors.lightBlueAccent[100])),
                   TextSpan(
                       text: label,
                       style: GoogleFonts.poppins(color: Colors.white)),
                   TextSpan(
                     text: ']',
                     style: GoogleFonts.poppins(
+                        fontWeight:
+                            endpoint == currentRoute ? FontWeight.bold : null,
                         color: endpoint == currentRoute
                             ? Colors.amber[700]
                             : Colors.lightBlueAccent[100]),
