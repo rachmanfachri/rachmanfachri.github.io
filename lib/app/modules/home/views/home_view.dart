@@ -63,7 +63,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          siteAppBar('/hello'),
+          siteAppBar('hello'),
         ],
       ),
     );
