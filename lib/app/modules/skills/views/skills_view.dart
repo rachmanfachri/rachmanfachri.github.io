@@ -76,7 +76,9 @@ class SkillsView extends GetView<SkillsController> {
                       " working on various proof-of-concept projects to hone my"
                       " understanding of this particular tech stack. started my"
                       " first job as flutter-based mobile app developer,"
-                      " i grow my experience on the same path until now. aside from"
+                      " i grow my experience on the same path until now."
+                      " the apps that i working on mainly developed with GetX"
+                      " as its state manager. aside from"
                       " mobile app, i also expand my flutter development"
                       " skill to progressive web app (PWA).",
                       style: GoogleFonts.poppins(
