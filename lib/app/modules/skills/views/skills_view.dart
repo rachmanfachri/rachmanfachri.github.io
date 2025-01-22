@@ -62,28 +62,7 @@ class SkillsView extends GetView<SkillsController> {
                           color: Colors.white, fontSize: 30),
                     ),
                     SizedBox(height: 20),
-                    FlutterLogo(size: 200),
-                    SizedBox(height: 20),
-                    Text(
-                      "flutter (and also dart)",
-                      style: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 24),
-                    ),
-                    SizedBox(height: 20),
-                    Text(
-                      "considered my main \"arsenal\" since my graduation in"
-                      " 2020, my introduction with flutter was begin with"
-                      " working on various proof-of-concept projects to hone my"
-                      " understanding of this particular tech stack. started my"
-                      " first job as flutter-based mobile app developer,"
-                      " i grow my experience on the same path until now."
-                      " the apps that i working on mainly developed with GetX"
-                      " as its state manager. aside from"
-                      " mobile app, i also expand my flutter development"
-                      " skill to progressive web app (PWA).",
-                      style: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 16),
-                    ),
+                    mainExpertiseBox(),
                     SizedBox(height: 30),
                     Text(
                       "supplemental skills (learning on progress)",
@@ -92,14 +71,20 @@ class SkillsView extends GetView<SkillsController> {
                           color: Colors.white, fontSize: 30),
                     ),
                     SizedBox(height: 20),
-                    Text(
-                      " • figma\n"
-                      " • javascript\n"
-                      " • kotlin\n"
-                      " • react native",
-                      style: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 20),
-                    ),
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black.withOpacity(0.25),
+                      ),
+                      child: dottedList([
+                        'figma',
+                        'kotlin',
+                        'javascript',
+                        'react native',
+                      ]),
+                    )
                   ],
                 ),
               ),
@@ -107,6 +92,86 @@ class SkillsView extends GetView<SkillsController> {
           ),
           siteAppBar('skills'),
         ],
+      ),
+    );
+  }
+
+  Widget mainExpertiseBox() {
+    final turns = 0.0.obs;
+    final isHover = false.obs;
+
+    return Obx(
+      () => TextButton(
+        onPressed: () {},
+        onHover: (value) {
+          if (value) {
+            turns.value += 1;
+            isHover.value = !isHover.value;
+          } else {
+            turns.value -= 1;
+            isHover.value = !isHover.value;
+          }
+        },
+        style: TextButton.styleFrom(
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            overlayColor: Colors.transparent,
+            padding: EdgeInsets.all(0)),
+        child: Container(
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.25),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AnimatedRotation(
+                turns: turns.value,
+                duration: Duration(milliseconds: 500),
+                child: AnimatedSize(
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeIn,
+                  child: FlutterLogo(size: isHover.value ? 250 : 200),
+                ),
+              ),
+              SizedBox(width: 30),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "flutter (and also dart)",
+                    style:
+                        GoogleFonts.poppins(color: Colors.white, fontSize: 24),
+                  ),
+                  SizedBox(height: 20),
+                  AnimatedSize(
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.decelerate,
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                          maxWidth:
+                              (1920 * ((isHover.value ? 2 : 3) / 5) / 2) - 40),
+                      child: Text(
+                        "considered my main \"arsenal\" since my graduation in"
+                        " 2020, my introduction with flutter was begin with"
+                        " working on various proof-of-concept projects to hone my"
+                        " understanding of this particular tech stack.\n\nstarted my"
+                        " first job as flutter-based mobile app developer,"
+                        " i grow my experience on the same path until now."
+                        " the apps that i working on mainly developed with GetX"
+                        " as its state manager. aside from"
+                        " mobile app, i also expand my flutter development"
+                        " skill to progressive web app (PWA).",
+                        style: GoogleFonts.poppins(
+                            color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
