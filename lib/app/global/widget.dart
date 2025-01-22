@@ -42,8 +42,10 @@ Widget appBarActionButton(String label, String endpoint, String currentRoute) {
 
   return Obx(
     () => TextButton(
-      onPressed: () =>
-          Get.offNamedUntil('/$endpoint', ModalRoute.withName('/hello')),
+      onPressed: endpoint == currentRoute
+          ? null
+          : () =>
+              Get.offNamedUntil('/$endpoint', ModalRoute.withName('/hello')),
       child: isHover.value || endpoint == currentRoute
           ? RichText(
               text: TextSpan(
@@ -77,5 +79,18 @@ Widget appBarActionButton(String label, String endpoint, String currentRoute) {
             ),
       onHover: (hover) => isHover.value = hover,
     ),
+  );
+}
+
+Widget dottedList(List<String> items) {
+  return Wrap(
+    spacing: 30,
+    children: [
+      for (int i = 0; i < items.length; i++)
+        Text(
+          "• ${items[i]}",
+          style: GoogleFonts.poppins(color: Colors.white, fontSize: 20),
+        ),
+    ],
   );
 }
