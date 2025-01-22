@@ -12,12 +12,7 @@ class ProjectsView extends GetView<ProjectsController> {
   ProjectsView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Scrollbar(
-            // thumbVisibility: true,
-            trackVisibility: true,
-            interactive: false,
-            child: projectsBody()));
+    return Scaffold(body: projectsBody());
   }
 
   Widget projectsBody() {
@@ -44,17 +39,17 @@ class ProjectsView extends GetView<ProjectsController> {
           Container(
             width: double.infinity,
             height: double.infinity,
+            padding: EdgeInsets.only(top: kToolbarHeight),
             color: Colors.black.withOpacity(0.65),
-            alignment: Alignment.center,
             child: AnimatedOpacity(
               opacity: c.contentOpacity.value,
               duration: Duration(milliseconds: 500),
-              child: Padding(
-                padding: EdgeInsets.only(top: kToolbarHeight),
-                child: SingleChildScrollView(
+              child: SingleChildScrollView(
+                child: Center(
                   child: Container(
                     padding: EdgeInsets.all(30),
                     margin: EdgeInsets.all(30),
+                    width: 1920 / 2,
                     constraints: BoxConstraints(maxWidth: 1920 / 2),
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.5),
@@ -107,6 +102,8 @@ class ProjectsView extends GetView<ProjectsController> {
                             ),
                           ],
                         ),
+                        const SizedBox(height: 30),
+                        ndaProjectsBox()
                       ],
                     ),
                   ),
@@ -162,6 +159,35 @@ class ProjectsView extends GetView<ProjectsController> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget ndaProjectsBox() {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      width: 780,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.black.withOpacity(0.25),
+      ),
+      child: Column(
+        children: [
+          Text(
+            'non-disclosure projects',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.poppins(color: Colors.white, fontSize: 22),
+          ),
+          SizedBox(height: 20),
+          dottedList(
+            [
+              'auction app (EU market only)',
+              'clinic information system app',
+              'plantation growth monitoring app',
+              'vintage car marketplace app',
+            ],
+          )
+        ],
       ),
     );
   }
